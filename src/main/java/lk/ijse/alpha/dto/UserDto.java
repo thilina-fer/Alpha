@@ -2,7 +2,7 @@ package lk.ijse.alpha.dto;
 
 public class UserDto {
     private String userId;
-    private String useeName;
+    private String userName;
     private String email;
     private String password;
     private String contact;
@@ -14,7 +14,7 @@ public class UserDto {
 
     public UserDto(String userId, String useeName, String email, String password, String contact, String address, String role) {
         this.userId = userId;
-        this.useeName = useeName;
+        this.userName = useeName;
         this.email = email;
         this.password = password;
         this.contact = contact;
@@ -30,12 +30,12 @@ public class UserDto {
         this.userId = userId;
     }
 
-    public String getUseeName() {
-        return useeName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUseeName(String useeName) {
-        this.useeName = useeName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getEmail() {
@@ -79,6 +79,6 @@ public class UserDto {
     }
 
     public String toString() {
-        return "UserDto{" + "userId=" + userId + ", useeName=" + useeName + ", email=" + email + ", password=" + password + ", contact=" + contact + ", address=" + address + ", role=" + role + '}';
+        return "UserDto{" + "userId=" + userId + ", useeName=" + userName + ", email=" + email + ", password=" + password + ", contact=" + contact + ", address=" + address + ", role=" + role + '}';
     }
 }
