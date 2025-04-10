@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class EmployeeModel {
     public String saveEmployee(EmployeeDto employeeDto) throws ClassNotFoundException, SQLException{
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "INSERT INTO employee VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO Employee VALUES(?,?,?,?,?,?)";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, employeeDto.getEmpId());
         statement.setString(2, employeeDto.getEmpName());
@@ -26,7 +26,7 @@ public class EmployeeModel {
     }
     public String updateEmployee(EmployeeDto employeeDto) throws ClassNotFoundException , SQLException{
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "UPDATE employee SET emp_name = ? , empp_contact = ? , emp_address = ? , emp_age = ? , salary = ? , WHERE employee_id  = ?";
+        String sql = "UPDATE Employee SET emp_name = ? , empp_contact = ? , emp_address = ? , emp_age = ? , salary = ? , WHERE employee_id  = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, employeeDto.getEmpName());
         statement.setString(2, employeeDto.getEmpContact());
@@ -39,7 +39,7 @@ public class EmployeeModel {
     }
     public EmployeeDto deleteEmployee (String empId) throws ClassNotFoundException , SQLException{
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "DELETE FROM employee WHERE employee_id = ?";
+        String sql = "DELETE FROM Employee WHERE employee_id = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
 
         ResultSet rst = statement.executeQuery();
@@ -58,7 +58,7 @@ public class EmployeeModel {
     }
     public ArrayList<EmployeeDto> getAll() throws ClassNotFoundException , SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "SELECT * FROM employee";
+        String sql = "SELECT * FROM Employee";
         PreparedStatement statement = connection.prepareStatement(sql);
 
         ResultSet rst = statement.executeQuery();

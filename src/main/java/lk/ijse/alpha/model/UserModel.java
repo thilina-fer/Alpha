@@ -13,7 +13,7 @@ public class UserModel {
 
     public String saveUser(UserDto userDto) throws ClassNotFoundException, SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "INSERT INTO user VALUES(?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO User VALUES(?,?,?,?,?,?,?)";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, userDto.getUserId());
         statement.setString(2, userDto.getUserName());
@@ -29,7 +29,7 @@ public class UserModel {
 
     public String UpdateUser(UserDto userDto) throws ClassNotFoundException, SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "UPDATE user SET user_name = ? , email = ? , password = ? , contact = ? , address = ? , role = ? WHERE user_id = ? ";
+        String sql = "UPDATE User SET user_name = ? , email = ? , password = ? , contact = ? , address = ? , role = ? WHERE user_id = ? ";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, userDto.getUserName());
         statement.setString(2, userDto.getEmail());
@@ -44,7 +44,7 @@ public class UserModel {
 
     public UserDto DeleteUser(String userId) throws ClassNotFoundException, SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "DELETE FROM user WHERE user_id = ?";
+        String sql = "DELETE FROM User WHERE user_id = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setString(1, userId);
 
@@ -65,7 +65,7 @@ public class UserModel {
     }
     public ArrayList<UserDto> getAll() throws ClassNotFoundException , SQLException{
         Connection connection = DBConnection.getInstance().getConnection();
-        String sql = "SELECT * FROM user";
+        String sql = "SELECT * FROM User";
         PreparedStatement statement = connection.prepareStatement(sql);
 
         ResultSet rst = statement.executeQuery();
