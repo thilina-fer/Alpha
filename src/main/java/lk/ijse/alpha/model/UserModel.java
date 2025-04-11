@@ -27,7 +27,7 @@ public class UserModel {
 
     }
 
-    public String UpdateUser(UserDto userDto) throws ClassNotFoundException, SQLException {
+    public String updateUser(UserDto userDto) throws ClassNotFoundException, SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
         String sql = "UPDATE User SET user_name = ? , email = ? , password = ? , contact = ? , address = ? , role = ? WHERE user_id = ? ";
         PreparedStatement statement = connection.prepareStatement(sql);
@@ -42,7 +42,7 @@ public class UserModel {
         return statement.executeUpdate() > 0 ? "Successfully Updated" : "Fail";
     }
 
-    public UserDto DeleteUser(String userId) throws ClassNotFoundException, SQLException {
+    public UserDto deleteUser(String userId) throws ClassNotFoundException, SQLException {
         Connection connection = DBConnection.getInstance().getConnection();
         String sql = "DELETE FROM User WHERE user_id = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
