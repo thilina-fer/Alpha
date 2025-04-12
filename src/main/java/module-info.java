@@ -2,6 +2,7 @@ module lk.ijse.alpha {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires java.desktop;
 
 
     opens lk.ijse.alpha to javafx.fxml;
